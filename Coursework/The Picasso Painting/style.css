@@ -1,0 +1,218 @@
+/* style.css */
+
+    body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #72acb8;
+    color: #fff;
+    }
+
+    main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+    }
+
+    footer {
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        background-color: #4cc34e;
+        color: #fff;
+        padding: 1px;
+        text-align: center;
+    }
+
+    button[type="submit"] {
+    background-color: #0077be;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+    }
+
+    button[type="submit"]:hover {
+    background-color: #0077be;
+    }
+
+/* stylizing the form */
+
+   .form {
+    display: flex;
+    flex-direction: column;
+    padding: 20px; 
+    align-items: center;
+    width: 80%;
+    margin-top: 10px;
+    }
+  
+   .form label {
+    margin-bottom: 5px;
+   }
+  
+   .form input[type="text"],
+   .form input[type="email"] {
+    padding: 5px;
+    margin-bottom: 10px;
+    width: 100%;
+    box-sizing: border-box;
+   }
+  
+   .form input[type="submit"] {
+    background-color: #0077be;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    }
+  
+/* stylizing the art */
+
+  .art {
+    display: grid;
+    border: 5px solid rgb(27, 25, 25);
+    padding: 15px; 
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    grid-template-rows: repeat(auto-fit, minmax(100px, 1fr));
+    grid-gap: 15px;
+    width: 80%;
+    height: 60%;
+  }
+  
+  .shape {
+    position: relative;
+    z-index: 1;
+  }
+  
+  .rect {
+    width: 65%;
+    height: 65%;
+    background-color: #0077be;
+  }
+  
+  .circle {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background-color: #ef476f;
+  }
+  
+  .triangle {
+    width: 35%;
+    height: 65%;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    border-bottom: 100px solid #ffd166;
+  }
+  
+  .triangle:before {
+    content: "";
+    position: absolute;
+    bottom: -50px;
+    right: -75px;
+    width: 0;
+    height: 0;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    border-bottom: 100px solid  #0e8a53;
+    z-index: -1;
+  }
+  
+  .triangle:after {
+    content: "";
+    position: absolute;
+    top: -100px;
+    left: -50px;
+    width: 0;
+    height: 0;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+  }  
+
+/* modify styles for different screen sizes */
+/* modify styles for desktop */
+    @media screen and (max-width: 1680px) {
+    .art {
+      width: 70%;
+      height: 70%;
+    }
+  }
+  
+  /* modify styles for iPad */
+    @media screen and (max-width: 1024px) {
+        .art {
+      width: 90%;
+      height: 90%;
+    }
+    
+    .rectangle {
+      width: 300px;
+      height: 150px;
+    }
+    
+    .circle {
+      width: 150px;
+      height: 150px;
+    }
+    
+    .triangle {
+      border-left: 75px solid transparent;
+      border-right: 75px solid transparent;
+    }
+    x
+    .triangle:before {
+      top: 100px;
+      left: 100px;
+      border-bottom: 50px solid #F7B32B;
+    }
+    
+    .triangle::content {
+      top: 250px;
+      left: 350px;
+      border-top: 50px solid #0072C6;
+    }
+  }
+
+/* modify styles for mobile */  
+  @media screen and (max-width: 480px) {
+    .art {
+      width: 90%;
+      height: 90%;
+    }
+    
+    .rectangle {
+      width: 150px;
+      height: 75px;
+    }
+    
+    .circle {
+      width: 75px;
+      height: 75px;
+    }
+    
+    .triangle {
+      border-left: 50px solid transparent;
+      border-right: 50px solid transparent;
+    }
+    
+    .triangle-yellow {
+      top: 50px;
+      left: 50px;
+      border-bottom: 25px solid #F7B32B;
+    }
+    
+    .triangle-blue {
+      top: 125px;
+      left: 225px;
+      border-top: 25px solid #0072C6;
+    }
+  }
